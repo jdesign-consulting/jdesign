@@ -27,14 +27,25 @@ Then open http://localhost:8000.
 
 1. In the repo on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 2. Make sure the code is on the `main` branch. Every push to `main` deploys automatically, and you can also run the workflow by hand from the **Actions** tab ("Deploy site to GitHub Pages" → "Run workflow").
-3. The site is published at `https://jdesign-consulting.github.io/jdesign/`.
+3. The site is published at https://jdesign.live (and at `https://jdesign-consulting.github.io/jdesign/` until the custom domain is set).
 
-### Custom domain (optional)
+### Custom domain: jdesign.live
 
-1. In **Settings → Pages → Custom domain**, enter your domain (for example `jdesign.co.uk`) and save.
-2. At your domain registrar, add the DNS records GitHub shows you (four `A` records for an apex domain, or a `CNAME` to `jdesign-consulting.github.io` for `www`).
-3. Tick **Enforce HTTPS** once the certificate is issued.
-4. Update the absolute URLs in `site/index.html` (`og:url`, `og:image` and the JSON-LD `url`) to the new domain.
+The domain is set in **Settings → Pages → Custom domain** (a `CNAME` file is not used with Actions deploys). DNS records at the registrar:
+
+| Type  | Host / Name | Value |
+|-------|-------------|-------|
+| A     | `@` | `185.199.108.153` |
+| A     | `@` | `185.199.109.153` |
+| A     | `@` | `185.199.110.153` |
+| A     | `@` | `185.199.111.153` |
+| AAAA  | `@` | `2606:50c0:8000::153` |
+| AAAA  | `@` | `2606:50c0:8001::153` |
+| AAAA  | `@` | `2606:50c0:8002::153` |
+| AAAA  | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `jdesign-consulting.github.io` |
+
+Once DNS resolves, tick **Enforce HTTPS** in the Pages settings. If the domain ever changes, update the absolute URLs in `site/index.html` (`og:url`, `og:image` and the JSON-LD `url`).
 
 ## Before promoting the site
 
