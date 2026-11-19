@@ -10,7 +10,9 @@ site/
   assets/css/styles.css styles (brand colours and fonts are at the top in :root)
   assets/js/main.js     mobile menu, scroll reveals, contact form handling
   assets/img/           favicon, social share image, portfolio screenshots
-.github/workflows/deploy.yml   publishes site/ to GitHub Pages
+.github/workflows/ci.yml       validates the HTML and checks for missing files on every push
+.github/workflows/deploy.yml   runs CI, then publishes site/ to GitHub Pages
+scripts/check-assets.mjs       the missing-file check used by CI
 ```
 
 ## Preview locally
