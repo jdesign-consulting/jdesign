@@ -260,9 +260,12 @@ mark {
 .ticker ul { display: flex; flex: none; }
 .ticker li {
   font-family: var(--font-display); font-weight: 800; font-size: clamp(1.125rem, 2vw, 1.5rem);
-  white-space: nowrap; padding: 0 28px; display: flex; align-items: center; gap: 56px;
+  white-space: nowrap; display: flex; align-items: center;
+  /* Equal space either side of each dot: word, gap, dot, gap, next word */
+  gap: var(--ticker-gap); padding-right: var(--ticker-gap);
 }
-.ticker li::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-right: -32px; }
+.ticker { --ticker-gap: clamp(18px, 2.4vw, 28px); }
+.ticker li::after { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ---------- Sections ---------- */
