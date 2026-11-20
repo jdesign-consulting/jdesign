@@ -49,7 +49,7 @@ Once DNS resolves, tick **Enforce HTTPS** in the Pages settings. If the domain e
 
 ## Before promoting the site
 
-- [ ] **Contact form:** create a free form at [formspree.io](https://formspree.io) and replace `YOUR_FORM_ID` in `site/index.html`. Until then the form tells visitors it isn't connected yet.
+- [x] **Contact form:** connected to Formspree (`https://formspree.io/f/mzervneo`). To change it, update the form `action` in `site/index.html`.
 - [ ] Read through the copy (especially the FAQ and "Why jdesign" sections) and adjust any promises so they match how you work.
 - [ ] Optionally add a direct email address or phone number to the contact section and footer.
 
